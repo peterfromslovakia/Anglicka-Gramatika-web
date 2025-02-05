@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Oficiálna stránka programu Anglická gramatika a časy">
+    <meta name="author" content="">
+    <title>Anglická gramatika a časy</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+            .gallery img {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+                transition: transform 0.3s ease;
+                border: 2px solid #ddd;
+                cursor: pointer;
+            }
+
+                .gallery img:hover {
+                    transform: scale(1.1);
+                }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1050;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+            .modal img {
+                max-width: 80%;
+                max-height: 80%;
+                border-radius: 5px;
+            }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn-download {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+            .social-icons a img {
+                width: 40px;
+                height: 40px;
+                transition: transform 0.3s ease;
+            }
+
+                .social-icons a img:hover {
+                    transform: scale(1.2);
+                }
+
+        .buy-coffee {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+            .buy-coffee img {
+                height: 60px;
+                width: auto;
+            }
+    </style>
+</head>
+<body id="page-top">
+    <!-- Navigácia -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container px-4">
+            <a class="navbar-brand" href="#page-top">Anglická gramatika a časy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Funkcie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#samples">Ukážky</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#download">Download</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hlavná sekcia -->
+    <header class="bg-primary bg-gradient text-white text-center">
+        <div class="container px-4">
+            <h1 class="fw-bolder">Naučte sa anglickú gramatiku a časy jednoducho!</h1>
+            <p class="lead">Interaktívne učenie s okamžitou spätnou väzbou a analýzou vášho progresu.</p>
+            <a class="btn btn-lg btn-light" href="#about">Viac informácií</a>
+        </div>
+    </header>
+
+    <!-- Funkcie -->
+    <section id="about" class="bg-light">
+        <div class="container px-4">
+            <h2 class="text-center">Hlavné funkcie</h2>
+            <ul>
+                <li>✔ <strong>Analýza chýb</strong> – Automatické vyhodnocovanie odpovedí a oprava chýb.</li>
+                <li>✔ <strong>Zobrazovanie štatistík o teste</strong> – Po ukončení testu sa zobrazia podrobné štatistiky vrátane počtu správnych odpovedí, nesprávnych odpovedí, celkového skóre a percentuálnej úspešnosti.</li>
+                <li>✔ <strong>Možnosť precvičovať jednotlivé úrovne</strong> – K dispozícii sú úrovne A1-A2, B1-B2, C1-C2.</li>
+                <li>✔ <strong>Zobrazenie gramatických vzorov-viet</strong> – Aktuálne naimportované vzory a vety sú prehľadne zobrazené.</li>
+                <li>✔ <strong>Možnosť importovať vlastné vzory a časy</strong> – Používatelia môžu pridať vlastné vzory a gramatické cvičenia pre rôzne úrovne.</li>
+                <li>✔ <strong>Automatická štatistika</strong> – Po spustení testu môžete začať precvičovanie a po jeho zastavení sa automaticky zobrazí detailná štatistika.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Ukážky (Galéria) -->
+    <section id="samples">
+        <div class="container px-4">
+            <h2 class="text-center">Ukážky z programu</h2>
+            <div class="gallery">
+                <img src="images/Statistika.png" alt="Štatistika testu" onclick="openModal('images/Statistika.png')">
+                <img src="images/Databaza_a.png" alt="Databáza A" onclick="openModal('images/Databaza_a.png')">
+                <img src="images/Databaza_b.png" alt="Databáza B" onclick="openModal('images/Databaza_b.png')">
+                <img src="images/Databaza_c.png" alt="Databáza C" onclick="openModal('images/Databaza_c.png')">
+                <img src="images/Spravna_odpoved.png" alt="Správna odpoveď" onclick="openModal('images/Spravna_odpoved.png')">
+                <img src="images/Testovacia_veta_na_preklad.png" alt="Testovacia veta" onclick="openModal('images/Testovacia_veta_na_preklad.png')">
+                <img src="images/Nespravna_odpoved.png" alt="Nesprávna odpoveď" onclick="openModal('images/Nespravna_odpoved.png')">
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">×</span>
+        <img id="modalImage" src="" alt="">
+    </div>
+
+    <!-- Download -->
+    <section id="download">
+        <div class="container px-4 text-center">
+            <h2 class="text-center">Stiahnite si program</h2>
+            <p>Program a ďalšie súbory si môžete stiahnuť priamo tu:</p>
+            <a href="https://github.com/peterfromslovakia/Anglicka-Gramatika/raw/8965952c87a3527925b5d35b99f0bc52ba88faea/setup.exe" class="btn btn-primary btn-download">Stiahnuť inštalačný súbor</a>
+            <a href="https://github.com/peterfromslovakia/Anglicka-Gramatika/releases/download/v1.0.0/A.Level.-.Elementary.A1-A2.txt" class="btn btn-primary btn-download">A Level - Elementary</a>
+            <a href="https://github.com/peterfromslovakia/Anglicka-Gramatika/releases/download/v1.0.0/B.Level.-.Intermediate.B1-B2.txt" class="btn btn-primary btn-download">B Level - Intermediate</a>
+            <a href="https://github.com/peterfromslovakia/Anglicka-Gramatika/releases/download/v1.0.0/C.Level.-.Advanced.C1-C2.txt" class="btn btn-primary btn-download">C Level - Advanced</a>
+            <a href="https://github.com/peterfromslovakia/Anglicka-Gramatika/releases/download/v1.0.0/All.levels.A1-A2.-.B1-B2.-.C1-C2.txt" class="btn btn-primary btn-download">All Levels (A1-C2)</a>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="contact" class="bg-light">
+        <div class="container px-4 text-center">
+            <h2 class="text-center">Podporte tento projekt</h2>
+            <p>Ak sa vám tento projekt páči, môžete ho podporiť a pozrieť si aj môj ďalší projekt na výučbu slovíčok <a href="https://peterfromslovakia.github.io/vocabular-web/" target="_blank">Vocabular</a>.</p>
+            <div class="social-icons">
+                <a href="https://github.com/peterfromslovakia" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"></a>
+                <a href="https://www.youtube.com/@peter_obala" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+                <a href="https://www.tiktok.com/@peter_obala" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046127.png" alt="TikTok"></a>
+                <a href="mailto:peter.obala@gmail.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
+            </div>
+            <div class="buy-coffee">
+                <a href="https://www.buymeacoffee.com/peter_obala" target="_blank">
+                    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skripty -->
+    <script>
+        function openModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modal.style.display = 'flex';
+            modalImage.src = src;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
